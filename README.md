@@ -22,4 +22,4 @@ Only the case when first opening "/"
    - bun
    - deno
    - express
-4. Run the server using `npm run serve.engine` or `bun run server.engine`, again replacing engine with with the one you chose when building. 
+4. Run the server using `npm run serve.engine` or `bun run serve.engine`, again replacing engine with with the one you chose when building. 
