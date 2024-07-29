@@ -15,6 +15,11 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/fastify/vite.config.ts",
+    "build.server.fastify": "vite build -c adapters/fastify/vite.config.ts",
+    "build.server.bun": "vite build -c adapters/bun/vite.config.ts",
+    "build.server.deno": "vite build -c adapters/deno/vite.config.ts",
+    "build.server.express": "vite build -c adapters/express/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
@@ -23,16 +28,25 @@
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
+    "serve.fastify": "node server/entry.fastify",
+    "serve.express": "node server/entry.express",
+    "serve.bun": "bun server/entry.bun.js",
+    "serve.deno": "deno run --allow-net --allow-read --allow-env server/entry.deno.js",
     "start": "vite --open --mode ssr",
     "qwik": "qwik"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.7.1",
     "@builder.io/qwik-city": "^1.7.1",
+    "@types/bun": "*",
+    "@types/compression": "^1.7.2",
     "@types/eslint": "^8.56.10",
+    "@types/express": "^4.17.19",
     "@types/node": "^20.12.7",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
+    "compression": "^1.7.4",
+    "dotenv": "^16.3.2",
     "eslint": "^8.57.0",
     "eslint-plugin-qwik": "^1.7.1",
     "prettier": "^3.2.5",
@@ -40,5 +54,12 @@
     "undici": "*",
     "vite": "^5.2.10",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "@fastify/compress": "^6.2.1",
+    "@fastify/static": "^6.10.1",
+    "express": "4.19.2",
+    "fastify": "^4.17.0",
+    "fastify-plugin": "^4.5.0"
   }
 }
