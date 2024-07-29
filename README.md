@@ -1,105 +1,25 @@
-# Qwik City App ⚡️
+# Qwik SSG Link demonstration
+## Explanation
+This project has two pages "/" and "/second".
+I have configured the adapters to use SSG only on "/" and regular SSR on "/second".
+### What I expect to happen:
+1. I open one of the pages -> Rendered on the server. Either the rerendered page for "/" or the new generated page for "/second". (Indicated by "This page is server rendered")
+2. I click the link to the other page using the link. -> JS is loaded to navigate on the client side. (Indicated by "This page is client rendered")
+3. I navigate back to my initial chosen page using the link. -> JS is loaded to navigate on the client side. (Indicated by "This page is client rendered")
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+### What actually happens:
+Only the case when first opening "/"
+1. I open "/". -> Loads rerendered page for "/". (Indicated by "This page is server rendered")
+2. I navigate to "/second" using the link. -> The second page is loaded completely from the server. (Indicated by "This page is server rendered")
+3. I navigate back to "/" using the link. -> The first page is loaded on the client. (Indicated by "This page is client rendered")
 
----
 
-## Project Structure
-
-This project is using Qwik with [QwikCity](https://qwik.dev/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
-Inside your project, you'll see the following directory structure:
-
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
-
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/qwikcity/routing/overview/) for more info.
-
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `bun qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/qwikcity/guides/static-site-generation/).
-
-```shell
-bun qwik add # or `bun qwik add`
-```
-
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `bun start`
-```
-
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-bun preview # or `bun preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-bun build # or `bun build`
-```
-
-## Deno Server
-
-This app has a minimal [Deno server](https://docs.deno.com/runtime/tutorials/http_server) implementation. After running a full build, you can preview the build using the command:
-
-```
-bun serve
-```
-
-Then visit [http://localhost:8080/](http://localhost:8080/)
-
-## Bun Server
-
-This app has a minimal [Bun server](https://bun.sh/docs/api/http) implementation. After running a full build, you can preview the build using the command:
-
-```
-bun run serve
-```
-
-Then visit [http://localhost:3000/](http://localhost:3000/)
-
-## Express Server
-
-This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
-
-```
-npm run serve
-```
-
-Then visit [http://localhost:8080/](http://localhost:8080/)
-
-## Fastify Server
-
-This app has a minimal [Fastify server](https://fastify.dev/) implementation. After running a full build, you can preview the build using the command:
-
-```
-npm run serve
-```
-
-Then visit [http://localhost:3000/](http://localhost:3000/)
+## Build and serve
+1. Install dependencies
+2. Run `npm run build` or `bun run build`
+3. Run `npm run build.server.engine` or `npm run build.server.engine`, replacing engine with either
+   - fastify
+   - bun
+   - deno
+   - express
+4. Run the server using `npm run serve.engine` or `bun run server.engine`, again replacing engine with with the one you chose when building. 
