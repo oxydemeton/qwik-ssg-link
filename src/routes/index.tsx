@@ -14,6 +14,8 @@ export default component$(() => {
         When you first load this page it should be server rendered. When navigating here I expect client navigation.
         <br />
         <Link href="/second">To Second Page</Link>
+        <br />
+        <a href=".">Full Reload</a>
       </div>
     </>
   );

@@ -16,6 +16,8 @@ export default component$(() => {
         Happy coding.
         <br />
         <Link href="/">To root/first Page</Link>
+        <br />
+        <a href=".">Full Reload</a>
       </div>
     </>
   );
