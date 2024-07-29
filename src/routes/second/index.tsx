@@ -9,7 +9,9 @@ export default component$(() => {
       <div>
         Second page
         <br />
-        This page {isServer? "server": "client"} rendered
+        This page {isServer? "server": "client"} rendered.
+        <br />
+        When you first load this page it should be server rendered. When navigating here I expect client navigation.
         <br />
         Happy coding.
         <br />
