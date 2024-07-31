@@ -1,8 +1,9 @@
 import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { Link, useNavigate } from "@builder.io/qwik-city";
 import { isServer } from "@builder.io/qwik/build";
 
 export default component$(() => {
+  const nav = useNavigate()
   return (
     <>
       <h1>Hi 👋</h1>
@@ -15,9 +16,11 @@ export default component$(() => {
         <br />
         Happy coding.
         <br />
-        <Link href="/">To root/first Page</Link>
+        <Link href="/">Link To root/first Page</Link>
         <br />
-        <a href=".">Full Reload</a>
+        <button onClick$={()=>nav("/")}>Button to root/first page</button>
+        <br />
+        <a href=".">Full Reload Link</a>
       </div>
     </>
   );
