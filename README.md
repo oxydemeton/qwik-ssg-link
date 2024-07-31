@@ -22,4 +22,8 @@ Note: On stackblitz service workers do not work and such all pages are always lo
    - bun
    - deno
    - express
-4. Run the server using `npm run serve.engine` or `bun run serve.engine`, again replacing engine with with the one you chose when building. 
+4. Run the server using `npm run serve.engine` or `bun run serve.engine`, again replacing engine with with the one you chose when building.
+
+## Static Site Generator (Node.js)
+When using static side generation all navigations are made with a refresh and not on client side.
+to 
