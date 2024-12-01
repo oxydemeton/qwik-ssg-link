@@ -1,6 +1,6 @@
-import { denoServerAdapter } from "@builder.io/qwik-city/adapters/deno-server/vite";
-import { extendConfig } from "@builder.io/qwik-city/vite";
-import baseConfig from "../../vite.config";
+import { denoServerAdapter } from "@qwik.dev/router/adapters/deno-server/vite";
+import { extendConfig } from "@qwik.dev/router/vite";
+import baseConfig from "../../vite.config.ts";
 
 export default extendConfig(baseConfig, () => {
   return {

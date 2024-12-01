@@ -1,6 +1,6 @@
-import { component$ } from "@builder.io/qwik";
-import { Link, useNavigate, type DocumentHead } from "@builder.io/qwik-city";
-import { isServer } from "@builder.io/qwik/build";
+import { Link, useNavigate, type DocumentHead } from "@qwik.dev/router";
+import { component$ } from "@qwik.dev/core";
+import { isServer } from "@qwik.dev/core/build";
 
 export default component$(() => {
   const nav = useNavigate()

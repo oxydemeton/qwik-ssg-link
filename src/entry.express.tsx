@@ -8,9 +8,9 @@
  *
  */
 import {
-  createQwikCity,
+  createQwikRouter,
   type PlatformNode,
-} from "@builder.io/qwik-city/middleware/node";
+} from "@qwik.dev/router/middleware/node";
 import "dotenv/config";
 import qwikCityPlan from "@qwik-city-plan";
 import { manifest } from "@qwik-client-manifest";
@@ -31,7 +31,7 @@ const buildDir = join(distDir, "build");
 const PORT = process.env.PORT ?? 3000;
 
 // Create the Qwik City Node middleware
-const { router, notFound } = createQwikCity({
+const { router, notFound } = createQwikRouter({
   render,
   qwikCityPlan,
   manifest,
