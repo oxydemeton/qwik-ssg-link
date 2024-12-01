@@ -15,7 +15,7 @@ export default extendConfig(baseConfig, () => {
       denoServerAdapter({
         ssg: {
           include: ["/"], //Only root/first page for demonstration
-          origin: "https://yoursite.dev",
+          origin: "http://localhost:3009"
         },
       }),
     ],
