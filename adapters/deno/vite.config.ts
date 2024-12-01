@@ -7,7 +7,7 @@ export default extendConfig(baseConfig, () => {
     build: {
       ssr: true,
       rollupOptions: {
-        input: ["src/entry.deno.ts", "@qwik-city-plan"],
+        input: ["src/entry.deno.ts", "@qwik-router-config"],
       },
       minify: false,
     },
