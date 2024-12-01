@@ -1,6 +1,6 @@
-import { createQwikRouter } from "@qwik.dev/router/middleware/node";
 import fastifyStatic from "@fastify/static";
-import qwikCityPlan from "@qwik-city-plan";
+import qwikRouterConfig from "@qwik-router-config";
+import { createQwikRouter } from "@qwik.dev/router/middleware/node";
 import type { FastifyPluginAsync } from "fastify";
 import fastifyPlugin from "fastify-plugin";
 
@@ -11,7 +11,7 @@ export interface FastifyQwikOptions {
   buildDir: string;
 }
 
-const { router, notFound } = createQwikRouter({ render, qwikCityPlan });
+const { router, notFound } = createQwikRouter({ render, qwikRouterConfig });
 
 const qwikPlugin: FastifyPluginAsync<FastifyQwikOptions> = async (
   fastify,
@@ -39,4 +39,4 @@ const qwikPlugin: FastifyPluginAsync<FastifyQwikOptions> = async (
   });
 };
 
-export default fastifyPlugin(qwikPlugin, { fastify: "4.x" });
+export default fastifyPlugin(qwikPlugin, { fastify: ">=4.0.0 <6.0.0" });
