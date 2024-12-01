@@ -29,3 +29,7 @@ Building the page static using `npm run build.server.static` after the client bu
 
 ## The button
 The navigation buttons use the `useNavigation` hook and always use client side navigation in all cases even when using the static side and represent the behavior I also expect from links.
+
+
+# FIX
+Just add the correct origin, including the port, into the adapter ssg config. This will fix the entire issue.

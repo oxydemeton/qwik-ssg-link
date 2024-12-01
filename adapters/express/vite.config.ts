@@ -14,7 +14,8 @@ export default extendConfig(baseConfig, () => {
       nodeServerAdapter({
         name: "express", 
         ssg: {
-          include: ["/"]  //Only root/first page for demonstration
+          include: ["/"],  //Only root/first page for demonstration
+          origin: "http://localhost:3000"
         }
       })
     ],
